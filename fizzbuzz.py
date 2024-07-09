@@ -9,28 +9,28 @@ def check_number_validity():
         print("Error: count_number is not a number")
         sys.exit(1)
 
+def fizzbuzz(count_number):
+    counter = 0
+    while counter != count_number:
+        counter += 1
+        action_case = 0
+        if counter % 3 == 0:
+            action_case += 1
+        if counter % 5 == 0:
+            action_case += 2
+
+        match action_case:
+            case 1:
+                print("Fizz")
+            case 2:
+                print("Buzz")
+            case 3:
+                print("Fizzbuzz")
+            case 0:
+                print(counter)
+
 count_number = get_arguments()
 check_number_validity()
-
 print("Running...")
-
-counter = 0
-while counter != count_number:
-    #switch
-    counter += 1
-    action_case = 0
-    if counter % 3 == 0:
-        action_case += 1
-    if counter % 5 == 0:
-        action_case += 2
-
-    match action_case:
-        case 1:
-            print("Fizz")
-        case 2:
-            print("Buzz")
-        case 3:
-            print("Fizzbuzz")
-        case 0:
-            print(counter)
+fizzbuzz(count_number)
 print("Exiting.")
